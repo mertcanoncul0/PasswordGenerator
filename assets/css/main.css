@@ -384,3 +384,36 @@
     }
   }
 }
+
+@layer Responsive {
+  @media (width <= 500px) {
+    .page-wrapper {
+      max-width: 340px;
+      margin-block-start: 64px;
+    }
+
+    .password-input-wrapper input {
+      padding: 16px;
+    }
+
+    .password-input-wrapper .copy-btn {
+      top: 22px;
+    }
+
+    .password-generator-card {
+      padding: 16px;
+    }
+
+    .password-input-wrapper input {
+      font-size: 24px;
+    }
+
+    .generator-strength h2 {
+      font-size: 16px;
+    }
+
+    .generator-strength .strength-text {
+      font-size: 18px;
+    }
+  }
+}

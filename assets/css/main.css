@@ -1,0 +1,386 @@
+@layer Reset {
+  /*
+  1. Use a more-intuitive box-sizing model.
+*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /*
+  2. Remove default margin
+*/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+  body {
+    line-height: 1.5;
+    font-family: "JetBrains Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    background-color: #18171f;
+    min-height: 100dvh;
+    color: #fff;
+  }
+  /*
+  5. Improve media defaults
+*/
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+  6. Remove built-in form typography styles
+*/
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /*
+  7. Avoid text overflows
+*/
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  /* Custom Reset */
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    outline-offset: none;
+    color: #fff;
+  }
+}
+
+@layer Custom {
+  .page-wrapper {
+    max-width: 540px;
+    margin-inline: auto;
+    text-align: center;
+    margin-block-start: 133px;
+  }
+
+  .page-head {
+    color: #817d92;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .password-input-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .password-input-wrapper input {
+    width: 100%;
+    padding: 19px 32px;
+    background-color: #24232c;
+    color: #e6e5ea;
+    font-weight: bold;
+    font-size: 32px;
+    border: none;
+  }
+
+  .password-input-wrapper .copy-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    filter: drop-shadow(0 0 5px #10521b);
+    right: 32px;
+    top: 28px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .password-input-wrapper .copy-btn:hover img {
+    filter: drop-shadow(0 0 10px #25bd3e);
+  }
+
+  .copy-btn .tooltiptext {
+    background-color: #25bd3e;
+    color: #fff;
+    position: absolute;
+    bottom: 150%;
+    right: -425%;
+    z-index: 1;
+    margin-left: -60px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 6px;
+    padding: 6px 12px;
+  }
+
+  .copy-btn[data-copied-message="Copied!"] .tooltiptext[data-success] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .copy-btn[data-copied-message="Failed!"] .tooltiptext[data-failed] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .password-generator-card {
+    padding: 24px 32px;
+    background-color: #24232c;
+  }
+
+  .generator-length {
+    margin-bottom: 32px;
+  }
+
+  .generator-length-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .generator-length h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .generator-length span {
+    color: #a4ffaf;
+    font-weight: bold;
+    font-size: 32px;
+  }
+
+  .generator-options label {
+    display: block;
+    text-align: left;
+  }
+
+  .generator-length input[type="range"] {
+    width: 100%;
+  }
+
+  .range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: #ccc;
+  }
+
+  .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #e6e5ea;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+  }
+
+  .range-input::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #e6e5ea;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border: none;
+    transition: 0.2s ease-in-out;
+  }
+
+  .range-input::-webkit-slider-thumb:hover {
+    background-color: #18171f;
+    border-color: #a4ffaf;
+  }
+
+  .range-input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(164, 255, 175, 0.1);
+  }
+  .range-input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(164, 255, 175, 0.2);
+  }
+  .range-input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(164, 255, 175, 0.2);
+  }
+
+  .range-input::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(164, 255, 175, 0.1);
+  }
+  .range-input:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(164, 255, 175, 0.2);
+  }
+  .range-input:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(164, 255, 175, 0.2);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .generator-options {
+    margin-bottom: 32px;
+  }
+
+  .generator-options label {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    user-select: none;
+    cursor: pointer;
+    color: #e6e5ea;
+    font-weight: bold;
+  }
+
+  .generator-options input[type="checkbox"] + .custom-checkbox:before {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e6e5ea;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .generator-options input[type="checkbox"]:hover + .custom-checkbox:before {
+    border-color: #a4ffaf;
+  }
+
+  .generator-options input[type="checkbox"]:checked + .custom-checkbox:before {
+    content: url(../img/check.svg);
+    background-color: #a4ffaf;
+    border: none;
+  }
+
+  .generator-strength {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #18171f;
+    padding: 24px 32px;
+    margin-bottom: 32px;
+  }
+
+  .generator-strength h2 {
+    color: #817d92;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .strength-indicator-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .generator-strength .strength-text {
+    color: #e6e5ea;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-right: 8px;
+  }
+
+  .generator-strength .strength-indicator-rectangle {
+    display: inline-block;
+    width: 10px;
+    height: 28px;
+    background-color: transparent;
+    border: 2px solid #e6e5ea;
+  }
+
+  .strength-indicator-wrapper[data-strength-message="too-weak"]
+    .strength-indicator-rectangle:nth-child(-n + 2) {
+    background-color: #f64a4a;
+    border-color: transparent;
+  }
+
+  .strength-indicator-wrapper[data-strength-message="weak"]
+    .strength-indicator-rectangle:nth-child(-n + 3) {
+    background-color: #fb7c58;
+    border-color: transparent;
+  }
+
+  .strength-indicator-wrapper[data-strength-message="medium"]
+    .strength-indicator-rectangle:nth-child(-n + 4) {
+    background-color: #f8cd65;
+    border-color: transparent;
+  }
+
+  .strength-indicator-wrapper[data-strength-message="strong"]
+    .strength-indicator-rectangle:nth-child(-n + 5) {
+    background-color: #a4ffaf;
+    border-color: transparent;
+  }
+
+  .generator-action {
+    background-color: #a4ffaf;
+    width: 100%;
+    color: #24232c;
+    padding-block: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .generator-action svg path {
+    transition: fill 0.2s ease-in-out;
+  }
+
+  .generator-action:hover {
+    border-color: #a4ffaf;
+    background-color: transparent;
+    color: #a4ffaf;
+
+    & svg path {
+      fill: #a4ffaf;
+    }
+  }
+}

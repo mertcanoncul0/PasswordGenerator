@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/helper.js"></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <main class="page-wrapper">
+      <h1 class="page-head">Password Generator</h1>
+
+      <div class="password-input-wrapper">
+        <input type="text" data-password disabled />
+        <button class="copy-btn" title="Click to copy" data-copy-btn>
+          <img src="assets/img/copy.svg" alt="Copy password icon" />
+          <span class="tooltiptext" data-success>Password copied!</span>
+          <span class="tooltiptext" data-failed>could not be copied!</span>
+        </button>
+      </div>
+
+      <div class="password-generator-card">
+        <div class="generator-length">
+          <div class="generator-length-wrapper">
+            <h2>Character Length</h2>
+            <span data-password-length-text>6</span>
+          </div>
+          <div class="range">
+            <input
+              type="range"
+              min="6"
+              max="16"
+              value="6"
+              data-range-slider
+              class="range-input"
+            />
+          </div>
+        </div>
+
+        <div class="generator-options">
+          <label>
+            <input
+              type="checkbox"
+              class="sr-only"
+              data-generate-option="upperCase"
+            />
+            <span class="custom-checkbox"></span>
+            <p>Include Uppercase Letters</p>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="sr-only"
+              data-generate-option="lowerCase"
+            />
+            <span class="custom-checkbox"></span>
+            <p>Include Lowercase Letters</p>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="sr-only"
+              data-generate-option="numbers"
+            />
+            <span class="custom-checkbox"></span>
+            <p>Include Numbers</p>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              class="sr-only"
+              data-generate-option="symbols"
+            />
+            <span class="custom-checkbox"></span>
+            <p>Include Symbols</p>
+          </label>
+        </div>
+
+        <div class="generator-strength">
+          <h2>STRENGTH</h2>
+          <div class="strength-indicator-wrapper" data-strength-wrapper>
+            <span class="strength-text" data-strength-text></span>
+            <span class="strength-indicator-rectangle"></span>
+            <span class="strength-indicator-rectangle"></span>
+            <span class="strength-indicator-rectangle"></span>
+            <span class="strength-indicator-rectangle"></span>
+          </div>
+        </div>
+
+        <button class="generator-action" data-password-generate-btn>
+          Generate
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.10547 12L11.1054 6.00002L5.10547 0L3.84045 1.26501L7.68094 5.10547L0 5.10547V6.8946L7.68094 6.8946L3.84045 10.735L5.10547 12Z"
+              fill="#24232C"
+            />
+          </svg>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

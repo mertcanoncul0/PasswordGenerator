@@ -132,7 +132,7 @@ function handleRangeSlider(e) {
   passwordLengthTextEl.textContent = e.target.value
   const progress = ((e.target.value - 6) / 10) * 100
 
-  rangeSliderEl.style.background = `linear-gradient(to right, #A4FFAF ${progress}%, #ccc ${progress}%)`
+  rangeSliderEl.style.background = `linear-gradient(to right, #A4FFAF ${progress}%, #18171f ${progress}%)`
 }
 
 generatePasswordBtn.addEventListener("click", handleGeneratePassword)

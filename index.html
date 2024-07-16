@@ -19,7 +19,13 @@
       <h1 class="page-head">Password Generator</h1>
 
       <div class="password-input-wrapper">
-        <input type="text" data-password disabled />
+        <input
+          type="text"
+          id="password"
+          aria-label="Password"
+          data-password
+          disabled
+        />
         <button class="copy-btn" title="Click to copy" data-copy-btn>
           <img src="assets/img/copy.svg" alt="Copy password icon" />
           <span class="tooltiptext" data-success>Password copied!</span>
@@ -31,7 +37,9 @@
         <div class="generator-length">
           <div class="generator-length-wrapper">
             <h2>Character Length</h2>
-            <span data-password-length-text>6</span>
+            <span data-password-length-text aria-label="Password length"
+              >6</span
+            >
           </div>
           <div class="range">
             <input
@@ -39,6 +47,8 @@
               min="6"
               max="16"
               value="6"
+              aria-label="Password digit range"
+              id="range-input"
               data-range-slider
               class="range-input"
             />

@@ -87,7 +87,7 @@
   .page-head {
     color: #817d92;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 32px;
   }
 
@@ -109,7 +109,7 @@
   .password-input-wrapper .copy-btn {
     position: absolute;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     filter: drop-shadow(0 0 5px #10521b);
     right: 32px;
     top: 28px;
@@ -166,7 +166,7 @@
 
   .generator-length h2 {
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
   }
 
@@ -193,7 +193,7 @@
     outline: none;
     border-radius: 15px;
     height: 6px;
-    background: #ccc;
+    background: #18171f;
   }
 
   .range-input::-webkit-slider-thumb {
@@ -291,6 +291,11 @@
     border: none;
   }
 
+  .generator-options p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
   .generator-strength {
     display: flex;
     align-items: center;
@@ -303,7 +308,7 @@
   .generator-strength h2 {
     color: #817d92;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
   }
 
@@ -387,6 +392,10 @@
 
 @layer Responsive {
   @media (width <= 500px) {
+    .page-head {
+      font-size: 24px;
+    }
+
     .page-wrapper {
       max-width: 340px;
       margin-block-start: 64px;
